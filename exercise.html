@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>運動進行中 - 樂活健身導航</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header exercise-header">
+        <button class="back-btn" onclick="location.href='map.html'">← 放棄</button>
+        <h1>坐姿胸推機</h1>
+        <div style="width: 60px;"></div>
+    </header>
+
+    <main class="exercise-main">
+        <!-- 狀態與次數提示 -->
+        <div class="status-board">
+            <h2 id="rep-counter">目標：12 下</h2>
+            <p id="instruction-text">請調整重量至適當，背部貼緊椅背。</p>
+        </div>
+
+        <!-- 視覺節拍器 (會放大縮小的圓圈) -->
+        <div class="rhythm-container">
+            <div id="rhythm-circle" class="rhythm-circle">
+                <span id="circle-text">準備</span>
+            </div>
+        </div>
+
+        <!-- 控制按鈕區 -->
+        <div class="action-area">
+            <button id="start-exercise-btn" class="start-btn" onclick="startExercise()">▶ 開始運動</button>
+            <button id="finish-btn" class="arrive-btn" style="display: none;" onclick="location.href='index.html'">🎉 完成，回首頁</button>
+        </div>
+    </main>
+
+    <!-- JavaScript 邏輯：控制節拍、動畫與語音 -->
+    <script>
+        let reps = 0;
+        const totalReps = 12;
+        let isExercising = false;
+        
+        const circle = document.getElementById('rhythm-circle');
+        const circleText = document.getElementById('circle-text');
+        const repCounter = document.getElementById('rep-counter');
+        const instructionText = document.getElementById('instruction-text');
+        const startBtn = document.getElementById('start-exercise-btn');
+        const finishBtn = document.getElementById('finish-btn');
+
+        // 語音播放函數
+        function speak(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'zh-TW'; // 設定為台灣中文
+            utterance.rate = 1.0; // 語速
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // 核心運動邏輯 (非同步函數來控制時間暫停)
+        async function startExercise() {
+            if (isExercising) return;
+            isExercising = true;
+
+            // 隱藏開始按鈕
+            startBtn.style.display = 'none';
+            instructionText.innerText = "請跟著節奏與語音動作";
+
+            // 倒數準備
+            speak("準備開始，三，二，一");
+            circleText.innerText = "3";
+            await sleep(1000);
+            circleText.innerText = "2";
+            await sleep(1000);
+            circleText.innerText = "1";
+            await sleep(1000);
+
+            // 開始循環動作
+            for (reps = 1; reps <= totalReps; reps++) {
+                repCounter.innerText = `目前第 ${reps} / ${totalReps} 下`;
+
+                // 步驟一：推 (向心收縮) 2秒
+                speak("推");
+                circle.classList.add('pushing'); // 觸發 CSS 放大動畫
+                circle.classList.remove('pulling');
+                circleText.innerText = "推！";
+                await sleep(2000);
+
+                // 步驟二：慢慢放 (離心收縮) 3秒
+                speak("慢慢放");
+                circle.classList.add('pulling'); // 觸發 CSS 縮小動畫
+                circle.classList.remove('pushing');
+                circleText.innerText = "放...";
+                await sleep(3000);
+            }
+
+            // 完成運動
+            speak("太棒了，完成訓練！請休息一下。");
+            circleText.innerText = "完成";
+            circle.classList.remove('pulling', 'pushing');
+            finishBtn.style.display = 'block'; // 顯示完成按鈕
+        }
+
+        // 輔助函數：用來等待指定的毫秒數
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+    </script>
+</body>
+</html>

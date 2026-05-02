@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>地圖導航 - 樂活健身導航</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <button class="back-btn" onclick="location.href='recommend.html'">← 返回</button>
+        <h1>第一站：坐姿胸推機</h1>
+        <div style="width: 60px;"></div>
+    </header>
+
+    <main>
+        <!-- 提示訊息 -->
+        <section class="instruction-box">
+            <h2>請前往閃爍標記處</h2>
+            <p>器材位置：重訓區 A 走道</p>
+        </section>
+
+        <!-- 地圖與標記區域 -->
+        <div class="map-container">
+            <!-- 這裡是一張假的底圖，未來你可以用 <img> 換成你們真實的健身房平面圖 -->
+            <div class="placeholder-map">
+                <p>健身房平面圖 (底圖)</p>
+            </div>
+
+            <!-- 動態標記點 -->
+            <!-- 透過修改 style 裡的 top 和 left 百分比，就可以把圖釘移動到地圖任何地方 -->
+            <div class="map-marker" style="top: 45%; left: 65%;">
+                <div class="pulse-ring"></div>
+                <div class="pin">📍</div>
+            </div>
+        </div>
+
+        <!-- 抵達確認按鈕 -->
+        <div class="action-area">
+            <button class="arrive-btn" onclick="location.href='exercise.html'">我到了，準備運動</button>
+        </div>
+    </main>
+</body>
+</html>

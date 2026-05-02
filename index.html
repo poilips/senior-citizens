@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>樂活健身導航</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>樂活健身房</h1>
+    </header>
+
+    <main>
+        <!-- 歡迎區塊 -->
+        <section class="welcome-section">
+            <h2>早安，今天想從哪裡開始？</h2>
+            <p>選擇一個方案，我們帶您去</p>
+        </section>
+
+        <!-- 三大核心功能選單 -->
+        <section class="menu-grid">
+            <button class="menu-card">
+                <div class="icon">🔍</div>
+                <div class="card-content">
+                    <h3>器材介紹</h3>
+                    <p>認識健身房內的各項設備</p>
+                </div>
+            </button>
+
+            <button class="menu-card">
+                <div class="icon">📝</div>
+                <div class="card-content">
+                    <h3>自訂方案</h3>
+                    <p>安排自己專屬的運動路線</p>
+                </div>
+            </button>
+
+            <!-- 加上 onclick 跳轉邏輯 -->
+            <button class="menu-card" onclick="location.href='recommend.html'">
+                <div class="icon">⭐</div>
+                <div class="card-content">
+                    <h3>推薦方案</h3>
+                    <p>跟著教練建議的菜單動一動</p>
+                </div>
+            </button>
+        </section>
+
+        <!-- 準備進入地圖導航的按鈕 -->
+        <div class="action-area">
+            <button class="start-btn">開始導航與運動</button>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>推薦方案 - 樂活健身導航</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="page-header">
+        <!-- 點擊這個按鈕會回到首頁 -->
+        <button class="back-btn" onclick="location.href='index.html'">← 返回</button>
+        <h1>推薦方案</h1>
+        <div style="width: 60px;"></div> <!-- 用來平衡排版的隱形區塊 -->
+    </header>
+
+    <main>
+        <section class="welcome-section">
+            <h2>請選擇一個運動菜單</h2>
+            <p>跟著教練的安排，安全又健康</p>
+        </section>
+
+        <!-- 方案列表 -->
+        <div class="routine-list">
+            
+            <!-- 方案卡片 1 -->
+            <div class="routine-card">
+                <div class="routine-header">
+                    <h3>🦵 防跌倒下肢強化</h3>
+                    <span class="tag easy">初階</span>
+                </div>
+                <p>強化大腿與臀部肌肉，走路更穩健。</p>
+                <div class="routine-details">
+                    <span>⏱ 約 20 分鐘</span>
+                    <span>📍 包含 3 項器材</span>
+                </div>
+                <!-- 加上 onclick 邏輯 -->
+                <button class="select-btn" onclick="location.href='map.html'">選擇此方案</button>
+            </div>
+
+            <!-- 方案卡片 2 -->
+            <div class="routine-card">
+                <div class="routine-header">
+                    <h3>💪 五十肩復健友善</h3>
+                    <span class="tag easy">初階</span>
+                </div>
+                <p>和緩拉伸與背部輕量訓練，舒緩肩頸。</p>
+                <div class="routine-details">
+                    <span>⏱ 約 15 分鐘</span>
+                    <span>📍 包含 2 項器材</span>
+                </div>
+                <button class="select-btn">選擇此方案</button>
+            </div>
+
+            <!-- 方案卡片 3 -->
+            <div class="routine-card">
+                <div class="routine-header">
+                    <h3>🔥 全身活力保養</h3>
+                    <span class="tag medium">中階</span>
+                </div>
+                <p>適合有運動習慣的長者，維持全身肌肉量。</p>
+                <div class="routine-details">
+                    <span>⏱ 約 30 分鐘</span>
+                    <span>📍 包含 5 項器材</span>
+                </div>
+                <button class="select-btn">選擇此方案</button>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

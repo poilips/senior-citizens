@@ -1,0 +1,398 @@
+/* 基礎設定與重置 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, 'LiHei Pro', '微軟正黑體', sans-serif;
+    background-color: #F4F7F6; /* 柔和的背景色，不刺眼 */
+    color: #333333;
+    line-height: 1.5;
+}
+
+/* 頂部標題列 */
+header {
+    background-color: #2C3E50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+/* 主要內容區塊置中且限制寬度，模擬手機版型 */
+main {
+    padding: 24px 20px;
+    max-width: 500px; 
+    margin: 0 auto;
+}
+
+.welcome-section {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.welcome-section h2 {
+    font-size: 1.6rem;
+    color: #2C3E50;
+    margin-bottom: 8px;
+}
+
+.welcome-section p {
+    font-size: 1.1rem;
+    color: #666666;
+}
+
+/* 選單按鈕排版 */
+.menu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* 按鈕之間的間距加大，防誤觸 */
+}
+
+/* 長者友善的卡片按鈕設計 */
+.menu-card {
+    background-color: white;
+    border: 2px solid #E0E0E0;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+}
+
+/* 點擊時的回饋效果 */
+.menu-card:active {
+    transform: scale(0.98);
+    border-color: #4CAF50;
+    background-color: #F1F8E9;
+}
+
+.menu-card .icon {
+    font-size: 2.5rem;
+    margin-right: 20px;
+}
+
+.menu-card h3 {
+    font-size: 1.5rem;
+    color: #2C3E50;
+    margin-bottom: 4px;
+}
+
+.menu-card p {
+    font-size: 1rem;
+    color: #666666;
+}
+
+/* 底部大按鈕 */
+.action-area {
+    margin-top: 40px;
+}
+
+.start-btn {
+    background-color: #E65100; /* 高對比的橘紅色，吸引注意力 */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 18px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(230, 81, 0, 0.3);
+}
+
+.start-btn:active {
+    background-color: #BF360C;
+    transform: translateY(2px);
+}
+/* --- 以下是推薦方案頁面 (recommend.html) 的專屬樣式 --- */
+
+/* 帶有返回按鈕的標題列 */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* 方案列表排版 */
+.routine-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 方案卡片設計 */
+.routine-card {
+    background-color: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    border-left: 6px solid #4CAF50; /* 左側有一條顏色標記，增加視覺辨識度 */
+}
+
+.routine-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.routine-header h3 {
+    font-size: 1.4rem;
+    color: #2C3E50;
+}
+
+/* 難度標籤 */
+.tag {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+.tag.easy { background-color: #E8F5E9; color: #2E7D32; }
+.tag.medium { background-color: #FFF3E0; color: #E65100; }
+
+.routine-card > p {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+/* 時間與器材數量資訊 */
+.routine-details {
+    display: flex;
+    gap: 15px;
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 15px;
+    background-color: #F9F9F9;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* 選擇按鈕 */
+.select-btn {
+    background-color: #2C3E50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1.2rem;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.select-btn:active {
+    background-color: #1A252F;
+}
+/* --- 以下是地圖導航頁面 (map.html) 的專屬樣式 --- */
+
+/* 頂部提示訊息 */
+.instruction-box {
+    background-color: #E3F2FD;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    border: 2px solid #2196F3;
+}
+
+.instruction-box h2 {
+    color: #1565C0;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.instruction-box p {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* 地圖容器 (必須是 relative，作為圖釘的定位基準) */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 350px; /* 控制地圖高度 */
+    background-color: #E0E0E0;
+    border-radius: 12px;
+    border: 2px solid #CCC;
+    overflow: hidden; /* 防止標記跑出框外 */
+    margin-bottom: 30px;
+}
+
+/* 這是假底圖的樣式，未來放入真實圖片 <img> 後可刪除 */
+.placeholder-map {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: repeating-linear-gradient(
+        45deg,
+        #f0f0f0,
+        #f0f0f0 10px,
+        #e0e0e0 10px,
+        #e0e0e0 20px
+    );
+    color: #777;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* --- 標記點與閃爍動畫設計 --- */
+
+/* 圖釘的絕對定位 (absolute 會對齊 map-container) */
+.map-marker {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    /* translate(-50%, -100%) 可以讓定位點精準對齊表情符號 📍 的最下端尖尖處 */
+    transform: translate(-50%, -100%); 
+    z-index: 10;
+}
+
+.pin {
+    font-size: 2.5rem;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* 閃爍的漣漪光環 */
+.pulse-ring {
+    position: absolute;
+    bottom: -5px; /* 對齊圖釘底部 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 87, 34, 0.6);
+    border-radius: 50%;
+    z-index: 1;
+    /* 套用動畫：名稱、持續時間、無限循環 */
+    animation: pulse 1.5s infinite ease-out; 
+}
+
+/* 定義閃爍動畫的影格 */
+@keyframes pulse {
+    0% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-50%) scale(4); /* 光環放大 */
+        opacity: 0; /* 逐漸透明 */
+    }
+}
+
+/* 抵達按鈕 */
+.arrive-btn {
+    background-color: #4CAF50; /* 安全、正確的綠色 */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.arrive-btn:active {
+    background-color: #388E3C;
+    transform: translateY(2px);
+}
+/* --- 以下是運動進行中 (exercise.html) 的專屬樣式 --- */
+
+.exercise-header {
+    background-color: #E65100; /* 運動中換成較為動態的顏色 */
+}
+
+.exercise-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.status-board {
+    margin-bottom: 40px;
+}
+
+.status-board h2 {
+    font-size: 2rem;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+
+.status-board p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* 視覺節拍器容器 */
+.rhythm-container {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* 節拍圓圈本體 */
+.rhythm-circle {
+    width: 120px;
+    height: 120px;
+    background-color: #E0E0E0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    /* 這裡設定 transition，讓大小變化有平滑的動畫效果 */
+    transition: transform 2s ease-out, background-color 0.5s; 
+}
+
+/* 動作：推 (向心，例如 2 秒)，圓圈變大、變橘色 */
+.rhythm-circle.pushing {
+    transform: scale(2); /* 放大兩倍 */
+    background-color: #FF7043;
+    transition: transform 2s ease-out, background-color 0.5s;
+}
+
+/* 動作：放 (離心，例如 3 秒)，圓圈慢慢縮小、變回綠色 */
+.rhythm-circle.pulling {
+    transform: scale(1); /* 縮回原大小 */
+    background-color: #66BB6A;
+    /* 注意：放回來的時間設為 3 秒，對應 JS 裡的 sleep(3000) */
+    transition: transform 3s ease-in-out, background-color 0.5s;
+}
